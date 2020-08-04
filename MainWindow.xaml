@@ -1,0 +1,16 @@
+﻿<Window x:Class="practicing_th8ngs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practicing_th8ngs"
+        mc:Ignorable="d"
+        Title="Stop Watch" Height="450" Width="550" Background="White">
+    <StackPanel Background="Black">
+        <TextBox Name="ResultScreen"  Margin="20" Width="350" Height="100" FontSize="65" TextAlignment="Center" Text="00:00:00.00"></TextBox>
+        <TextBox Name="InfoScreen" TextBlock.Foreground="White" Background="Black" Margin="10" Width="200" Height="30" TextAlignment="Center" FontSize="25"></TextBox>
+        <Button Name="StartButton" FontSize="30" Content="Start" TextBlock.Foreground="White" Background="Black" Margin="10" Width="200" Height="50" Click="Button_Click_Start"></Button>
+        <Button Name="Stopbutton" FontSize="30" Content="Stop" TextBlock.Foreground="White" Background="Black" Margin="10" Width="200" Height="50" Click="Button_Click_Stop"></Button>
+        <Button Name="Resetbutton" FontSize="30" Content="Reset" TextBlock.Foreground="White" Background="Black" Margin="10" Width="200" Height="50" Click="Button_Click_Reset"></Button>
+    </StackPanel>
+</Window>
