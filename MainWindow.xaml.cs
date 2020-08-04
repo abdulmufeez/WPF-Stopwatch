@@ -1,25 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;                           //For Stopwatch class
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
+using System.Windows.Threading;                     //For timedispatcher class
 
 namespace practicing_th8ngs
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+{                                                                  
     public partial class MainWindow : Window
     {
         DispatcherTimer dispatchertimer = new DispatcherTimer();    //A timer that is integrated into the Dispatcher queue which is processed at a specified interval of time and at a specified priority.
@@ -28,15 +13,15 @@ namespace practicing_th8ngs
         public MainWindow()
         {
             InitializeComponent();
-            dispatchertimer.Tick += new EventHandler(dispatchertimer_tick);
-            dispatchertimer.Interval = new TimeSpan(0,0,0,0,1);
+            dispatchertimer.Tick += new EventHandler(dispatchertimer_tick);               //this a dispatcher event include init for further info goto doc                            
+            dispatchertimer.Interval = new TimeSpan(0,0,0,0,1);                           //interval for stopwatch means loop for time
         }
 
         void dispatchertimer_tick(object sender, EventArgs e)
         {
             if (stopwatch.IsRunning)
             {
-                TimeSpan ts = stopwatch.Elapsed;
+                TimeSpan ts = stopwatch.Elapsed;                    //calculated time (elapsed)
                 currentTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds/10);
                 ResultScreen.Text = currentTime;
             }
